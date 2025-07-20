@@ -20,12 +20,12 @@
 ┌─────────────────────────────────────────────────────────────┐
 │                     FRAPPE STACK                            │
 ├─────────────────────────────────────────────────────────────┤
-│ Frontend   │ JavaScript (ES6+) + jQuery + Bootstrap        │
-│ Backend    │ Python 3.x + Flask/Werkzeug                   │
-│ Database   │ MariaDB/MySQL + SQLAlchemy-like ORM           │
-│ Cache      │ Redis (sessões, cache, real-time)             │
-│ Queue      │ Redis + RQ (background jobs)                  │
-│ WebServer  │ Nginx (proxy) + Gunicorn (WSGI)              │
+│ Frontend   │ JavaScript (ES6+) + jQuery + Bootstrap         │
+│ Backend    │ Python 3.x + Flask/Werkzeug                    │
+│ Database   │ MariaDB/MySQL + SQLAlchemy-like ORM            │
+│ Cache      │ Redis (sessões, cache, real-time)              │
+│ Queue      │ Redis + RQ (background jobs)                   │
+│ WebServer  │ Nginx (proxy) + Gunicorn (WSGI)                │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -157,11 +157,11 @@ frappe.ui.form.on('Nota Fiscal - Servico', {
 ├─────────────────────────────────────────────────────────────┤
 │ cur_frm.doc      │ Documento atual (objeto principal)       │
 │ locals           │ Cache de todos os documentos carregados  │
-│ frappe.model     │ Funções para manipular documentos       │
-│ frm.dirty()      │ Verifica se há mudanças não salvas      │
-│ frm.is_new()     │ Documento é novo (__islocal = true)     │
+│ frappe.model     │ Funções para manipular documentos        │
+│ frm.dirty()      │ Verifica se há mudanças não salvas       │
+│ frm.is_new()     │ Documento é novo (__islocal = true)      │
 └─────────────────────────────────────────────────────────────┘
-*/
+*
 
 // Exemplo de manipulação de estado
 frappe.ui.form.on('Nota Fiscal - Servico', {
@@ -776,21 +776,21 @@ user_data = frappe.cache().get_value('user_preference')
 ### **6.3 Submissão de Documento (Workflow):**
 
 ```
-👤 USUÁRIO                     🖥️ FRONTEND                  🐍 BACKEND                    💾 DATABASE
-     │                              │                           │                           │
-1.   ├─ Clica "Submit"             │                           │                           │
-     │                              ├─ Validações client       │                           │
-     │                              ├─ POST /api/method         │                           │
-     │                              │                           ├─ doc.submit()            │
-     │                              │                           │  ├─ validate()           │
-     │                              │                           │  ├─ before_submit()      │
-     │                              │                           │  ├─ SET docstatus = 1    ├─ UPDATE...docstatus=1
-     │                              │                           │  ├─ on_submit()          │
-     │                              │                           │  └─ after_submit()       │
-     │                              └─ Status atualizado       │                           │
-     │                                                         │                           │
-2.   ├─ Documento submetido        │                           │                           │
-     │   (não pode mais editar)     │                           │                           │
+👤 USUÁRIO                     🖥️ FRONTEND                  🐍 BACKEND              💾 DATABASE
+     │                              │                          │                          │
+1.   ├─ Clica "Submit"              │                          │                         │
+     │                              ├─ Validações client       │                          │
+     │                              ├─ POST /api/method        │                          │
+     │                              │                          ├─ doc.submit()            │
+     │                              │                          │  ├─ validate()           │
+     │                              │                          │  ├─ before_submit()      │
+     │                              │                          │  ├─ SET docstatus = 1    ├─ UPDATE...docstatus=1
+     │                              │                          │  ├─ on_submit()          │
+     │                              │                          │  └─ after_submit()       │
+     │                              └─ Status atualizado       │                          │
+     │                                                         │                          │
+2.   ├─ Documento submetido         │                          │                         │
+     │   (não pode mais editar)     │                          │                          │
 ```
 
 ---
