@@ -1,7 +1,7 @@
 # Links úteis:
-- Fieldtypes[https://docs.frappe.io/framework/user/en/basics/doctypes/fieldtypes]
-- Controllers do python[https://docs.frappe.io/framework/user/en/basics/doctypes/controllers]
-- Eventos do front-end[https://docs.frappe.io/framework/user/en/api/form]
-- Fazendo chamadas ao servidor[https://docs.frappe.io/framework/user/en/api/server-calls]
+- Fieldtypes: https://docs.frappe.io/framework/user/en/basics/doctypes/fieldtypes
+- Controllers do python: https://docs.frappe.io/framework/user/en/basics/doctypes/controllers
+- Eventos do front-end: https://docs.frappe.io/framework/user/en/api/form
+- Fazendo chamadas ao servidor: https://docs.frappe.io/framework/user/en/api/server-calls
 
-- Tutorial em vídeo[https://www.youtube.com/playlist?list=PLADpUMlE9uyNnG4cZVETT_1JQynWig-KP]
+- Tutorial em vídeo: https://www.youtube.com/playlist?list=PLADpUMlE9uyNnG4cZVETT_1JQynWig-KP
