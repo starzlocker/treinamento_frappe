@@ -701,8 +701,8 @@ user_data = frappe.cache().get_value('user_preference')
 
 ```
 👤 USUÁRIO AÇÃO                🖥️ FRONTEND                  🐍 BACKEND                   💾 DATABASE
-     │                              │                          │                          │
-1.   ├─ Clica "Novo"                │                          │                          │
+     │                              │                          │                           │
+1.   ├─ Clica "Novo"                │                          │                           │
      │                              ├─ frappe.new_doc()        │                           │
      │                              ├─ Carrega form.js         │                           │
      │                              ├─ Executa setup()         │                           │
@@ -749,28 +749,28 @@ user_data = frappe.cache().get_value('user_preference')
 ```
 👤 USUÁRIO                     🖥️ FRONTEND                  🐍 BACKEND                    💾 DATABASE
      │                              │                           │                           │
-1.   ├─ Abre documento             │                           │                           │
+1.   ├─ Abre documento              │                           │                           │
      │                              ├─ GET /api/resource        │                           │
-     │                              │                           ├─ frappe.get_doc()        │
-     │                              │                           │  └─ SQL SELECT           ├─ SELECT * FROM...
-     │                              ├─ Carrega dados           │                           │
-     │                              ├─ Executa onload()        │                           │
-     │                              └─ Executa refresh()       │                           │
-     │                                                         │                           │
-2.   ├─ Modifica campo             │                           │                           │
-     │                              ├─ Trigger do campo        │                           │
-     │                              └─ Lógica de negócio       │                           │
-     │                                                         │                           │
-3.   ├─ Salva alterações           │                           │                           │
+     │                              │                           ├─ frappe.get_doc()         │
+     │                              │                           │  └─ SQL SELECT            ├─ SELECT * FROM...
+     │                              ├─ Executa onload()         │                           │
+     │                              ├─ Carrega dados            │                           │
+     │                              └─ Executa refresh()        │                           │
+     │                                                          │                           │
+2.   ├─ Modifica campo              │                           │                           │
+     │                              ├─ Trigger do campo         │                           │
+     │                              └─ Lógica de negócio        │                           │
+     │                                                          │                           │
+3.   ├─ Salva alterações            │                           │                           │
      │                              ├─ PUT /api/resource        │                           │
-     │                              │                           ├─ doc.save()              │
-     │                              │                           │  ├─ before_save()        │
-     │                              │                           │  ├─ validate()           │
-     │                              │                           │  ├─ check_if_latest()    │
-     │                              │                           │  ├─ SQL UPDATE           ├─ UPDATE tabNF...
-     │                              │                           │  ├─ on_update()          │
-     │                              │                           │  └─ after_save()         │
-     │                              └─ Form atualizado         │                           │
+     │                              │                           ├─ doc.save()               │
+     │                              │                           │  ├─ before_save()         │
+     │                              │                           │  ├─ validate()            │
+     │                              │                           │  ├─ check_if_latest()     │
+     │                              │                           │  ├─ SQL UPDATE            ├─ UPDATE tabNF...
+     │                              │                           │  ├─ on_update()           │
+     │                              │                           │  └─ after_save()          │
+     │                              └─ Form atualizado          │                           │
 ```
 
 ### **6.3 Submissão de Documento (Workflow):**
@@ -778,7 +778,7 @@ user_data = frappe.cache().get_value('user_preference')
 ```
 👤 USUÁRIO                     🖥️ FRONTEND                  🐍 BACKEND              💾 DATABASE
      │                              │                          │                          │
-1.   ├─ Clica "Submit"              │                          │                         │
+1.   ├─ Clica "Submit"              │                          │                          │
      │                              ├─ Validações client       │                          │
      │                              ├─ POST /api/method        │                          │
      │                              │                          ├─ doc.submit()            │
@@ -789,7 +789,7 @@ user_data = frappe.cache().get_value('user_preference')
      │                              │                          │  └─ after_submit()       │
      │                              └─ Status atualizado       │                          │
      │                                                         │                          │
-2.   ├─ Documento submetido         │                          │                         │
+2.   ├─ Documento submetido         │                          │                          │
      │   (não pode mais editar)     │                          │                          │
 ```
 
