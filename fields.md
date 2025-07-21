@@ -3,12 +3,13 @@ Estes são os blocos de construção para criar formulários e modelos de dados 
 # Campos de Dados Comuns
 
 ## Data			
-Um campo de texto padrão para textos curtos e simples.	
+Um campo de texto padrão para textos curtos e simples de até 140 caracteres.	
 Uso Típico: Nomes, títulos, códigos de produto.
 
 ## Attach			
 Permite ao usuário anexar qualquer tipo de arquivo, que é salvo no Gerenciador de Arquivos. 
 Uso Típico:	Anexar PDFs, planilhas, documentos.
+
 
 ## Attach Image	
 Um campo especializado para anexar imagens, que exibe uma pré-visualização (thumbnail).	
@@ -56,10 +57,18 @@ Armazena um número, mas o exibe com o símbolo de porcentagem (%).
 
 # Campos de Texto
 
-## Small Text		Uma área de texto para textos de tamanho médio, com múltiplas linhas e sem formatação.
-## Long Text		Uma área de texto maior para textos longos, sem formatação.
-## Text Editor		Uma área de texto com formatação (Rich Text), permitindo negrito, itálico, listas, imagens, etc.
-## Password		Um campo de texto que oculta os caracteres digitados. O valor é salvo de forma criptografada.
+## Small Text		
+Uma área de texto para textos de tamanho médio, com múltiplas linhas e sem formatação.
+
+## Long Text		
+Uma área de texto maior para textos longos, sem formatação.
+
+## Text Editor		
+Uma área de texto com formatação (Rich Text), permitindo negrito, itálico, listas, imagens, etc.
+
+## Password		
+Um campo de texto que oculta os caracteres digitados. O valor é salvo de forma criptografada.
+
 
 # Campos de Seleção e Relações
 
