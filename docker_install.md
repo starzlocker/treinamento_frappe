@@ -19,9 +19,51 @@
     code --install-extension ms-vscode-remote.remote-containers
     ```
 
-4. Instale o Docker seguindo as instruções em:
+4. Instruções completas no link:
 - [Instalação no Linux](https://docs.docker.com/desktop/setup/install/linux/)
+
+# Instalação do Docker no Linux
+4.0 Rode no terminal
+
+``` bash
+sudo apt install gnome-terminal
+```
+
+4.1 Baixe o pacote .deb [Pacote](https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64&_gl=1*ri1xc9*_ga*MTk5MzU2MTI2LjE3NDkwNjE1NTA.*_ga_XJWPQMJYHQ*czE3NTMxMTIyNjAkbzQkZzEkdDE3NTMxMTIyNjMkajU3JGwwJGgw)
+
+4.2 Baixe o repositório do Docker
+``` bash
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+
+4.3 Rode os seguintes comandos
+
+``` bash
+sudo apt-get update
+# Rode o arquivo que vc baixou
+sudo apt-get install ./docker-desktop-amd64.deb
+```
+
+4.4 O erro abaixo é esperado, pode ignorar
+``` bash
+N: Download is performed unsandboxed as root, as file '/home/user/Downloads/docker-desktop.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+```
+
 - [Instalação no Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
+
+
 
 5. No terminal, dentro da pasta `frappe_docker`, inicie o VSCode.
     ```sh
@@ -43,7 +85,7 @@
     bench set-config -g db_host mariadb
     bench set-config -g redis_cache redis://redis-cache:6379
     bench set-config -g redis_queue redis://redis-queue:6379
-    bench set-config -g redis_socketio redis://redis-queue:6379
+    bench set-config -g redis_socketio redis://redis_socketio:6379
     ```
 
 3. Crie um novo site:
